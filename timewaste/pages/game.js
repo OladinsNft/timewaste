@@ -137,7 +137,7 @@ const handleButtonClick = () => {
          disabledCanvasEvents={["dragstart", "scroll"]}
         />
 
-        {handleClickSpawnEnemies()}
+        
         </div>
       ) : (
         <div style={{ textAlign: 'center', padding: '0 20px' }} >Please Connect your wallet.
