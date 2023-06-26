@@ -24,7 +24,7 @@ export default function Home() {
   
   
   
-  const {unityProvider, sendMessage} = new useUnityContext({
+  const {unityProvider, sendMessage, isLoaded} = new useUnityContext({
     loaderUrl: "./Megaman/Build/ApiChickyLastTestUnity.loader.js",
     dataUrl: "./Megaman/Build/ApiChickyLastTestUnity.data",
     frameworkUrl: "./Megaman/Build/ApiChickyLastTestUnity.framework.js",
@@ -136,6 +136,15 @@ const handleButtonClick = () => {
         <Unity unityProvider={unityProvider} style={{ justifySelf: "center", width: 1920 ,alignSelf:"center"}}
          disabledCanvasEvents={["dragstart", "scroll"]}
         />
+          {isLoaded ? (
+      <div>
+        {handleClickSpawnEnemies()}
+      </div>
+    ) : (
+      <div style={{ textAlign: 'center', padding: '0 20px' }} >Press Play!</div>
+    )}
+
+        
 
         
         </div>
